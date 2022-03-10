@@ -1,0 +1,42 @@
+USE [ProductsDb]
+GO
+
+CREATE TABLE [dbo].[Providers](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Description] [varchar](100) NOT NULL,
+	[PhoneNumber] [varchar](16) NOT NULL,
+	[Email] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_Providers] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [ProvidersCode] UNIQUE NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Products](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Description] [varchar](200) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+	[ManufacturingDate] [date] NOT NULL,
+	[ValidityDate] [date] NOT NULL,
+	[ProviderId] [int] NOT NULL,
+ CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Products]  WITH CHECK ADD  CONSTRAINT [FK_Products_Providers] FOREIGN KEY([ProviderId])
+REFERENCES [dbo].[Providers] ([Id])
+GO
+
+ALTER TABLE [dbo].[Products] CHECK CONSTRAINT [FK_Products_Providers]
+GO
+
+

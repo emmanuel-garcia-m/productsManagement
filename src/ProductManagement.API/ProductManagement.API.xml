@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProductManagement.API</name>
+    </assembly>
+    <members>
+        <member name="M:ProductManagement.API.Controllers.ProductsController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Lista los productos creados en el sistema
+            </summary>
+            <param name="pageNumber">Numero de la pagina</param>
+            <param name="take"></param>       
+            <returns></returns>       
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProductsController.GetByCode(System.Int32)">
+            <summary>
+            Obtiene un producto por su código
+            </summary>
+            <param name="code"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProductsController.Create(ProductManagement.API.DTOs.ProductCreateOrEditModel)">
+            <summary>
+             Crear nuevo producto
+            </summary>
+            <param name="requestInfo"></param>
+            <returns></returns> 
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProductsController.Update(System.Int32,ProductManagement.API.DTOs.ProductCreateOrEditModel)">
+            <summary>
+            Actualiza un producto
+            </summary>
+            <param name="code"></param>
+            <param name="requestInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProductsController.DeleteByCode(System.Int32)">
+            <summary>
+            Elimina un producto
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProviderController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Lista los proveedores creados en el sistema
+            </summary>
+            <param name="pageNumber">Numero de la pagina</param>
+            <param name="take"></param>       
+            <returns></returns>       
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProviderController.GetByCode(System.Int32)">
+            <summary>
+            Obtiene un proveedor por su código
+            </summary>
+            <param name="code"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:ProductManagement.API.Controllers.ProviderController.Create(ProductManagement.API.DTOs.ProviderCreateOrEditModel)">
+            <summary>
+             Crear nuevo proveedor
+            </summary>
+            <param name="requestInfo"></param>
+            <returns></returns> 
+        </member>
+    </members>
+</doc>
